@@ -127,3 +127,31 @@ def game_hash
 end
 
 # Write code here
+#helper functions 
+def players game_hash
+  home = game_hash[:home] [:players]
+  away = game_hash[:away] [:players]
+  players = home.concat(away)
+end
+
+#assignment
+def num_points_scored name
+  players_array = players(game_hash)
+  players_array.find do |player|
+    if player[:player_name] == name
+      return player[:points]
+    end
+  end    
+end
+
+# puts num_points_scored("Kemba Walker")
+
+def shoe_size name
+  players_array = players(game_hash)
+  players_array.find do |player|
+    if player[:player_name] == name
+      return player[:shoe]
+    end
+  end    
+end
+# puts shoe_size("DeSagna Diop")
